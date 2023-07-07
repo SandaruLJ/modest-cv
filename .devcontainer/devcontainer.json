@@ -1,0 +1,10 @@
+{
+	"name": "SandaruLJ/TeX Live Basic",
+	"image": "sandarulj/texlive-basic:latest",
+	"customizations": {
+		"vscode": {
+			"extensions": ["James-Yu.latex-workshop"]
+		}
+	},
+	"remoteUser": "dev"
+}
