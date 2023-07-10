@@ -150,14 +150,14 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 %                            Header Setup and Printing                          -
 %--------------------------------------------------------------------------------
 
-% Address
+% Role
 \makeatletter
 
-\newcommand\address[1]{\def\@address{#1}}
-\address{}
+\newcommand\role[1]{\def\@role{#1}}
+\role{}
 
-\newcommand\printaddress{
-  \small{\@address}
+\newcommand\printrole{
+  \small{\@role}
 }
 
 \makeatother
@@ -193,7 +193,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \newcommand\makeheader{
   \begin{center}
     \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
-      \printaddress & \printname & \printcontacts \\
+      \printrole & \printname & \printcontacts \\
     \end{tabu}
   \end{center}
   \vspace*{\afterheaderspace}
