@@ -9,5 +9,6 @@
 	"remoteUser": "dev",
 	"containerEnv": {
 		"TZ": "Asia/Colombo"
-	}
+	},
+	"postCreateCommand": ["sh", ".devcontainer/font-setup.sh"]
 }
