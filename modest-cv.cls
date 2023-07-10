@@ -150,14 +150,14 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 %                            Header Setup and Printing                          -
 %--------------------------------------------------------------------------------
 
-% Address
+% Role
 \makeatletter
 
-\newcommand\address[1]{\def\@address{#1}}
-\address{}
+\newcommand\role[1]{\def\@role{#1}}
+\role{}
 
-\newcommand\printaddress{
-  \small{\@address}
+\newcommand\printrole{
+  \small{\@role}
 }
 
 \makeatother
@@ -193,7 +193,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \newcommand\makeheader{
   \begin{center}
     \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
-      \printaddress & \printname & \printcontacts \\
+      \printrole & \printname & \printcontacts \\
     \end{tabu}
   \end{center}
   \vspace*{\afterheaderspace}
@@ -225,13 +225,12 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
 \newtoggle{centertitledefined}
 \newtoggle{righttitledefined}
 
-\newenvironment{cvsubsection}[4][1]{
+\newenvironment{cvsubsection}[5][1]{
   \notblank{#2}{\toggletrue{lefttitledefined}}{}
-  \notblank{#3}{\toggletrue{centertitledefined}}{}
-  \notblank{#4}{\toggletrue{righttitledefined}}{}
-  \ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
-    \begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
-      \textbf{#2} & \textbf{#3} & \textbf{#4} \\
+  \notblank{#3}{\toggletrue{righttitledefined}}{}
+  \ifboolexpr{togl {lefttitledefined} or togl {righttitledefined}}{
+    \begin{tabu} to 1\textwidth { X[l,p] X[r,p] }
+      \textbf{#2} & \textbf{#3} \\ \small{#4} & \small{#5}
     \end{tabu}
     % Add space according to the specified number of lines
     \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
