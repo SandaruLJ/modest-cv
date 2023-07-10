@@ -230,7 +230,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \notblank{#3}{\toggletrue{righttitledefined}}{}
   \ifboolexpr{togl {lefttitledefined} or togl {righttitledefined}}{
     \begin{tabu} to 1\textwidth { X[l,p] X[r,p] }
-      \textbf{#2} & \textbf{#3} \\ {#4} & {#5}
+      \textbf{#2} & \textbf{#3} \\ \small{#4} & \small{#5}
     \end{tabu}
     % Add space according to the specified number of lines
     \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
