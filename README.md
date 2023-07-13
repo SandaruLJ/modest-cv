@@ -11,7 +11,7 @@ Slight modifications were made to the original [McDowell CV](https://github.com/
 - Added support for hyperlinks with `hyperref` package.
 
 ## Sample
-<kbd><img src="sample.png" width="720"></kbd>
+<kbd><img src="sample.png"></kbd>
 
 The content of this CV might not be great (I'm still learning, ya know), so don't refer to them as a good example. Just use the template and the style!
 
