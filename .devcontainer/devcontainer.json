@@ -3,7 +3,10 @@
 	"image": "sandarulj/texlive-basic:latest",
 	"customizations": {
 		"vscode": {
-			"extensions": ["James-Yu.latex-workshop"]
+			"extensions": ["James-Yu.latex-workshop"],
+			"settings": {
+				"latex-workshop.latex.external.build.command": "make"
+			}
 		}
 	},
 	"remoteUser": "dev",
