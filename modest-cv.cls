@@ -120,7 +120,7 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \fi
   
   \def\afterdoublelinesubsectionheaderspace{-11.75pt}
-  \def\aftermultilinesubsectionheaderspace{-7.75pt}
+  \def\aftermultilinesubsectionheaderspace{-9.50pt}
   \def\afteremptysubsectionheaderspace{1.25pt}
   \def\subsectionmargin{9pt}
   \def\aftersubsectionspace{2.1pt}
@@ -230,7 +230,9 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \notblank{#3}{\toggletrue{righttitledefined}}{}
   \ifboolexpr{togl {lefttitledefined} or togl {righttitledefined}}{
     \begin{tabu} to 1\textwidth { X[l,p] X[r,p] }
-      \textbf{#2} & \textbf{#3} \\ \small{#4} & \small{#5}
+      \textbf{#2} & \textbf{#3} \\
+      \small{\begin{tabular}[t]{@{}l@{}} #4 \end{tabular}} &
+      \small{\begin{tabular}[t]{@{}r@{}} #5 \end{tabular}}
     \end{tabu}
     % Add space according to the specified number of lines
     \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
